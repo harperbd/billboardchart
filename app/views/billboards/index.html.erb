@@ -1,2 +1,13 @@
-<h1>Billboards#index</h1>
-<p>Find me in app/views/billboards/index.html.erb</p>
+<h1>Billboard Top 100</h1>
+<br/>
+<hr>
+
+<% @billboard.each do |billboard| %>
+  <%= "Billboard Title: #{billboard.name}"%>
+  <br/>
+    <% billboard.songs.each do |song| %>
+    <%= "Song Title: #{song.title}" %>
+    <%= "Song Artist: #{song.artist.name}"%>
+    <br/>
+    <% end %>
+<% end %>
