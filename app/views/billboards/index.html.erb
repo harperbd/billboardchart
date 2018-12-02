@@ -5,7 +5,8 @@
 <% @billboard.each do |billboard| %>
   <%= "Billboard Title: #{billboard.name}"%>
   <br/>
-    <% billboard.songs.each do |song| %>
+    <% billboard.songs.order('ranking').each do |song| %>
+    <%# billboard.songs.each do |song| %>
     <%= "Song Title: #{song.title}" %>
     <%= "Song Artist: #{song.artist.name}"%>
     <br/>

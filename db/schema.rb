@@ -41,11 +41,9 @@ ActiveRecord::Schema.define(version: 2018_11_30_034959) do
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.bigint "artist_id"
-    t.bigint "billboard_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
-    t.index ["billboard_id"], name: "index_songs_on_billboard_id"
   end
 
   add_foreign_key "billboard_song_rankings", "billboards"
