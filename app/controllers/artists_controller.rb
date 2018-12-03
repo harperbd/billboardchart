@@ -30,7 +30,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
-  def get_billboard_id
-    
-  end
+  # def get_billboard_id
+  #   @billboard
+  # end
 end
