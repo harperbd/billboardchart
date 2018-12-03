@@ -18,7 +18,7 @@ class SongsController < ApplicationController
     @song = @art_or_bill.songs.create(song_params)
     if @song.save
       if @song.billboard_id == nil
-        @song.update(billboard_id: 1)
+         @song.update(billboard_id: 1) 
       end
       redirect_to root_path
     else
