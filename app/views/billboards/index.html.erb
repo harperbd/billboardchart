@@ -1,22 +1,13 @@
 <h1>Billboard App</h1>
-<br/>
 <hr>
-
-<%# @billboard.each do |billboard| %>
-  <%#= "Billboard Title: #{billboard.name}"%>
-<!--  <br/>-->
-    <%# billboard.songs.order('ranking').each do |song| %>
-    <%#=todo: replace find_by below as it's poor design and should not be in a view %>
-    <%#= "Rank: #{BillboardSongRanking.find_by(billboard_id: billboard.id, song_id: song.id).ranking}" %>
-    <%#= "Song Title: #{song.title}" %>
-    <%#= "Song Artist: #{song.artist.name}"%>
-<!--    <br/>-->
-    <%# end %>
-<%# end %>
+<br/>
 
 <% @billboards.each do |billboard| %>
   <%= link_to "#{billboard.name}", [@billboard, billboard] %>
-  <br/>
+  <br />
 <% end %>
 
-<%= link_to "Create New List", new_billboard_path %>
+<%= link_to "Create New List", new_billboard_path %><br />
+
+<%= link_to "View All Artists", artists_path %><br />
+<%= link_to "View All Songs", songs_path %><br />

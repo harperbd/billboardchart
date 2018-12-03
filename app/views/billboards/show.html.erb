@@ -1,9 +1,11 @@
 <h1><%= @billboard.name %></h1>
 
-    <% @billboard.songs.each do |song| %>
+    <% @billboard.songs.order('ranking').each do |song| %>
     <%= "Title: #{song.title}" %>
     <%= "Artist: #{song.artist.name}" %>
-    <%= "Current Rank: #{song.rank}" %>
+    <%#= "Current Rank: #{song.rank}" %>
+    <%#=todo: replace find_by below as it's poor design and should not be in a view %>
+    <%= "Current Rank: #{BillboardSongRanking.find_by(billboard_id: @billboard.id, song_id: song.id).ranking}" %>
     <br/>
     <% end %>
 
