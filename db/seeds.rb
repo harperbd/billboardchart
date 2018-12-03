@@ -12,6 +12,12 @@ billboard = Billboard.create(name: 'Top 100')
 
   2.times do |j|
     song = Song.create(title: "title_#{i}_#{j}", artist_id: artist.id)
+    # todo: randomly add songs to billboards with ranking???
   end
 
 end
+
+# BillboardSongRanking.create(ranking: 1, billboard_id: 1, song_id: 1)
+# BillboardSongRanking.create(ranking: 2, billboard_id: 1, song_id: 3)
+# BillboardSongRanking.create(ranking: 3, billboard_id: 1, song_id: 8)
+# BillboardSongRanking.create(ranking: 4, billboard_id: 1, song_id: 9)
