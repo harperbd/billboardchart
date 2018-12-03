@@ -1,0 +1,9 @@
+<%= @song.id ? "Edit Song Listing" : "Add New Song" %>
+
+<%= form_for [@art_or_bill, @song] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :rank %>
+  <%= f.text_area :rank %>
+  <%= f.submit %>
+  <% end %>
