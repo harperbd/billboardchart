@@ -6,7 +6,8 @@
   <%= "Billboard Title: #{billboard.name}"%>
   <br/>
     <% billboard.songs.order('ranking').each do |song| %>
-    <%# billboard.songs.each do |song| %>
+    <%#=todo: replace find_by below as it's poor design and should not be in a view %>
+    <%= "Rank: #{BillboardSongRanking.find_by(billboard_id: billboard.id, song_id: song.id).ranking}" %>
     <%= "Song Title: #{song.title}" %>
     <%= "Song Artist: #{song.artist.name}"%>
     <br/>
