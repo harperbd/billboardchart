@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.create(artist_params)
     if @artist.save
-      redirect_to new_artist_song_path(@artist)
+      redirect_to artists_path
     else
       render :new
     end
@@ -28,9 +28,5 @@ class ArtistsController < ApplicationController
 
   def set_artist
     @artist = Artist.find(params[:id])
-  end
-
-  def get_billboard_id
-    
   end
 end

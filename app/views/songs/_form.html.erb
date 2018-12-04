@@ -1,9 +1,12 @@
 <%= @song.id ? "Edit Song Listing" : "Add New Song" %>
 
-<%= form_for [@art_or_bill, @song] do |f| %>
+<%= form_for [@artist, @song] do |f| %>
+
   <%= f.label :title %>
   <%= f.text_field :title %>
-  <%= f.label :rank %>
-  <%= f.text_area :rank %>
+  <%= f.label :artist_id %>
+  <%= f.text_field :artist_id %>
+  <%# <%= f.select 'artist_id', options_for_select(@artists.collect{ |artist| [artist.name] }) %>
+
   <%= f.submit %>
   <% end %>
