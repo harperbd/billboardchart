@@ -1,22 +1,13 @@
 <h1>Billboard App</h1>
+<hr>
 <br/>
-
-<%# <% @billboards.each do |billboard| %>
-  <%# <%= "Billboard Title: #{billboard.name}"%>
-  <%# <br/> %>
-    <%# <% billboard.songs.each do |song| %>
-    <%# <%= "Song Title: #{song.title}" %>
-    <%# <%= "Song Artist: #{song.artist.name}"%>
-    <%# <%= "Song Rank: #{song.rank}"%> 
-    <%# <br/> %>
-    <%# <% end %> 
-<%# <% end %>
-
-<%# <%= link_to "Add New Song", new_billboard_song_path(@billboards) %>
 
 <% @billboards.each do |billboard| %>
   <%= link_to "#{billboard.name}", [@billboard, billboard] %>
-  <br/>
+  <br />
 <% end %>
 
-<%= link_to "Create New List", new_billboard_path %>
+<%= link_to "Create New List", new_billboard_path %><br />
+
+<%= link_to "View All Artists", artists_path %><br />
+<%= link_to "View All Songs", songs_path %><br />

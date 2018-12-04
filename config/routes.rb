@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'billboards#index'
 
   resources :billboards
+  resources :songs
+  resources :billboard_song_rankings
 
   resources :billboards do 
     resources :artists

@@ -1,11 +1,13 @@
 <h1><%= @billboard.name %></h1>
 
-    <% @billboard.songs.each do |song| %>
-    <%= "Title: #{song.title}" %>
-    <%= "Artist: #{song.artist.name}" %>
-    <%= "Current Rank: #{song.rank}" %>
-    <br/>
+    <% @billboard.songs.order('ranking').each do |song| %>
+      <%= "Rank: #{BillboardSongRanking.find_by(billboard_id: @billboard.id, song_id: song.id).ranking}" %>
+      <%= "Title: #{song.title}" %>
+      <%= "Artist: #{song.artist.name}" %>
+      <%#= "Current Rank: #{song.rank}" %>
+      <%#=todo: replace find_by below as it's poor design and should not be in a view %>
+      <br/>
     <% end %>
 
-  <%= link_to "Add New Song To List", new_billboard_artist_path(@billboard) %> 
+  <%= link_to "Add New Song To List", new_billboard_artist_path(@billboard) %>
   <%= link_to "Delete List", @billboard, method: :delete %>
