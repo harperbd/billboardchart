@@ -2,7 +2,7 @@
 <hr>
 
 <% @songs.each do |song| %>
-  <%= song.title %>
+  <%= song.title + " - " + song.artist.name %>
   <br />
 <% end %>
 
