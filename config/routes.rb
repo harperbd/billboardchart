@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   #   resources :artists
   # end
 
-  # resources :billboards do 
-  #   resources :songs
+  resources :billboards do
+    resources :billboard_song_rankings
+  end
+
+  # resources :songs do
+  #   resources :billboard_song_rankings
   # end
 
   # resources :artists do

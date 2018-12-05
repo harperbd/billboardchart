@@ -9,6 +9,6 @@
       <br/>
     <% end %>
 
-  <%= link_to "Add New Song To List", new_billboard_path(@billboard) %>
-  <%= link_to "Add Current Song To List", songs_path %>
+  <%= link_to "Add Song To List", new_billboard_billboard_song_ranking_path(@billboard.id) %>
+  <%#= link_to "Add Current Song To List", songs_path %>
   <%= link_to "Delete List", @billboard, method: :delete %>
