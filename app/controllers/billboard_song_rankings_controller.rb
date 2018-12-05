@@ -1,4 +1,7 @@
 class BillboardSongRankingsController < ApplicationController
+
+  before_action :set_billboard_song_ranking, only: [:destroy]
+
   def index
   #   todo: will this be used?
   end
@@ -25,8 +28,18 @@ class BillboardSongRankingsController < ApplicationController
     end
   end
 
+  def destroy
+    billboard_id = @billboard_song_ranking.billboard_id
+    @billboard_song_ranking.destroy
+    redirect_to billboard_path(billboard_id)
+  end
+
   private
     def billboard_song_ranking_params
       params.require(:billboard_song_ranking).permit(:billboard_id, :song_id, :ranking)
+    end
+
+    def set_billboard_song_ranking
+      @billboard_song_ranking = BillboardSongRanking.find(params[:id])
     end
 end
