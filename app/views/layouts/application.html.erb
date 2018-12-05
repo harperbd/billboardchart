@@ -10,12 +10,14 @@
   </head>
 
   <body>
-    <%= yield %>
-    <br />
-    <br />
-    <br />
-    <br />
-    <%#= todo: put in own footer div %>
-    <%= link_to "Home", billboards_path %>
+    <div class="container">
+      <%= yield %>
+      <br />
+      <br />
+      <br />
+      <br />
+      <%#= todo: put in own footer div %>
+      <%= link_to "Home", billboards_path %>
+    </div>
   </body>
 </html>
