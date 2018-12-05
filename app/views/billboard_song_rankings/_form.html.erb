@@ -1,7 +1,7 @@
 <%#= todo: load billboard to include the billboard name %>
 <%= form_for @billboard_song_ranking do |f| %>
   <%#= todo: set hidden billboard_id??? %>
-
+  <%= f.hidden_field :billboard_id, value: @billboard_song_ranking.billboard_id  %>
   <%= f.label :song_id %>
   <%#= todo: also include artist name in select box? %>
   <%= f.select(:song_id, options_from_collection_for_select(@songs, :id, :title)) %><br />
