@@ -17,11 +17,16 @@ class BillboardSongRankingsController < ApplicationController
   end
 
   def create
-
+    @billboard_song_ranking = BillboardSongRanking.create(billboard_song_ranking_params)
+    if (@billboard_song_ranking.save())
+      redirect_to billboard_path(@billboard_song_ranking.billboard_id)
+    else
+      render :new
+    end
   end
 
   private
     def billboard_song_ranking_params
-      params.require(:billboard_id).permit(:billboard_id)
+      params.require(:billboard_song_ranking).permit(:billboard_id, :song_id, :ranking)
     end
 end
