@@ -1,7 +1,8 @@
 <h1>Artists</h1>
 <hr>
 <% @artists.each do |artist| %>
-  <%= "Artist: #{artist.name}" %><br />
+  <%= "Artist: #{artist.name}" %> | <%= link_to "Delete Artist", artist, method: :delete %><br />
+  <%#= todo: add link for viewing then adding songs  %>
 <% end %>
 
 <%= link_to "Create New Artist", new_artist_path %>
