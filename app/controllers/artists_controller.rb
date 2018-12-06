@@ -10,7 +10,6 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
-    render partial: "form"
   end
 
   def create
